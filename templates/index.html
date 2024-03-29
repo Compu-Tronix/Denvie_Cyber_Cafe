@@ -23,12 +23,6 @@
                 DENVIE CYBER CAFE
             </h1>
         </div>
-        
-        <div class="title">
-            <h2>
-                COMPANY PROFILE
-            </h2>
-        </div>
 
         <div class="slogan">
             <h2>
@@ -36,16 +30,50 @@
             </h2>
         </div>
 
+        <div class="title">
+            <p>
+                Welcome 
+                
+                {% for username in username %}
+
+                {{ username }}
+
+                {% endfor %}
+            </p>
+        </div>
+
+        <div class="user_log_buttons">
+            <button>
+                <a href="/user_log/">
+                    {% for log in log %}
+
+                    {{ log }}
+
+                    {% endfor %}
+                </a>
+            </button>
+        </div>
+
     </div>
 
     <div class="about_us_container">
 
         <div class="our_vision_container">
-
+            <h2>
+                OUR VISION
+            </h2>
+            <P>
+                Our vision is to provide industry leading customer service.
+            </P>
         </div>
 
         <div class="our_mission_container">
-
+            <h2>
+                OUR MISSION
+            </h2>
+            <p>
+                We are committed to creating an ecosystem uniting software, education, and community to help businesses grow with a conscience and succeed with a soul.
+            </p>
         </div>
 
     </div>
@@ -54,10 +82,53 @@
         
         <div class="our_services_container">
 
+            <div class="cafe_services">
+
+                <ul>
+                    <li>
+                        <div class="service_icon">
+                            <img src="" alt="service_icon">
+                        </div>
+
+                        <div class="service_text">
+                            <p>
+                                Printing, typing, online applications ect.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service_icon">
+                            <img src="" alt="service_icon">
+                        </div>
+
+                        <div class="service_text">
+                            <p>
+                                computer training cources.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service_icon">
+                            <img src="" alt="service_icon">
+                        </div>
+
+                        <div class="service_text">
+                            <p>
+                                IT support
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+
+
         </div>
         
         <div class="more_infomation_container">
+            <div class="service_reviews">
 
+            </div>
         </div>
 
     </div>
