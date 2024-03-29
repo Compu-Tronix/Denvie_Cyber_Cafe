@@ -4,7 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def app_init():
-    return render_template('index.html')
+    log = 'login'
+    username = 'username'
+    return render_template('index.html', log=log, username=username)
 
 if __name__ == '__main__':
     app.run(debug=True)
