@@ -1,0 +1,10 @@
+.title_container {
+    background: rgb(0, 0, 255);
+}
+.form {
+    visibility: hidden;
+}
+.form.visible {
+    visibility: visible;
+    background:red;
+}
