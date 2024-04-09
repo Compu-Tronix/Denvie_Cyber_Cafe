@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def app_init():
-    log = 'login'
+    log = 'register/login'
     username = 'username'
     return render_template('index.html', log=log, username=username)
 

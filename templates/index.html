@@ -7,13 +7,16 @@
 
 <body>
     <!-- document header -->
-    <nav>
-
-        <div class="header_container">
-
-            
-    
-        </div>
+    <nav class="navigation_bar">
+        <button class="nav_btn" id="nav_btn">
+            vision
+        </button>
+        <button class="nav_btn" id="nav_btn">
+            mission
+        </button>
+        <button class="nav_btn" id="nav_btn">
+            services
+        </button>
     </nav>
     <!-- document title -->
     <div class="title_container">
@@ -29,37 +32,45 @@
                 Bringing our Cyber World to You
             </h2>
         </div>
+        <div class="welcome">
 
-        <div class="title">
-            <p>
-                Welcome 
-                
-                {% for username in username %}
+            <div class="title">
+                <p>
+                    Welcome 
+                    
+                    {% for username in username %}
 
-                {{ username }}
-
-                {% endfor %}
-            </p>
-        </div>
-
-        <div class="user_log_buttons">
-            <button id="log_btn">
-                    {% for log in log %}
-
-                    {{ log }}
+                    {{ username }}
 
                     {% endfor %}
-                
-            </button>
-        </div>
-        <div class="form">
-            <form action="/register" method="POST" >
-                <input type="text" placeholder="name" name="username" required>
-                <input type="email" placeholder="email" name="email" required>
-                <input type="password" placeholder="password" name="password" required>
-                <input type="password" placeholder="confirm password" name="confirm_password">
-                <input type="submit" value="register">
-            </form>
+                </p>
+            </div>
+
+            <div class="user_log_buttons">
+                <button id="log_btn">
+                        {% for log in log %}
+
+                        {{ log }}
+
+                        {% endfor %}
+                    
+                </button>
+            </div>
+            <div class="form">
+                <form action="/register" method="POST" >
+                    <input type="text" placeholder="name" name="username" required>
+                    <input type="email" placeholder="email" name="email" required>
+                    <input type="password" placeholder="password" name="password" required>
+                    <input type="password" placeholder="confirm password" name="confirm_password">
+                    <input type="submit" value="login">
+                    <button>
+                        <a href="/registration/">
+                            register
+                        </a>
+                    </button>
+                </form>
+            </div>
+
         </div>
 
     </div>
