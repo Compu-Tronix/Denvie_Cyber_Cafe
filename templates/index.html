@@ -8,42 +8,44 @@
 <body>
     <!-- document header -->
     <nav class="navigation_bar">
-        <button class="nav_btn" id="nav_btn">
-            vision
-        </button>
-        <button class="nav_btn" id="nav_btn">
-            mission
-        </button>
-        <button class="nav_btn" id="nav_btn">
-            services
-        </button>
-    </nav>
-    <!-- document title -->
-    <div class="title_container">
-
-        <div class="logo">
-            <h1>
-                DENVIE CYBER CAFE
-            </h1>
-        </div>
-
-        <div class="slogan">
-            <h2>
-                Bringing our Cyber World to You
-            </h2>
-        </div>
-        <div class="welcome">
-
-            <div class="title">
-                <p>
-                    Welcome 
-                    
+        <div class="navigation_buttons">
+            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_vision_container'))">
+                vision
+            </button>
+            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_mission_container'))">
+                mission
+            </button>
+            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('services'))">
+                services
+            </button>
+        </div>    
+        <div class="user_profile_btn">
+            <div class="profile_btn">
+                <a href="">
                     {% for username in username %}
 
                     {{ username }}
 
                     {% endfor %}
-                </p>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- document title -->
+    <div class="title_container">
+
+        
+        <div class="welcome">
+            <div class="logo">
+                <h1>
+                    DENVIE CYBER CAFE
+                </h1>
+            </div>
+
+            <div class="slogan">
+                <h2>
+                    Bringing our Cyber World to You
+                </h2>
             </div>
 
             <div class="user_log_buttons">
@@ -77,7 +79,7 @@
 
     <div class="about_us_container">
 
-        <div class="our_vision_container">
+        <div class="our_vision_container" id="our_vision_container">
             <h2>
                 OUR VISION
             </h2>
@@ -86,7 +88,7 @@
             </P>
         </div>
 
-        <div class="our_mission_container">
+        <div class="our_mission_container" id="our_mission_container">
             <h2>
                 OUR MISSION
             </h2>
@@ -97,7 +99,7 @@
 
     </div>
 
-    <div class="marketing_container">
+    <div class="marketing_container" id="services">
         
         <div class="our_services_container">
 

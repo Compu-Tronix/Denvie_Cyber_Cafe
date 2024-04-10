@@ -13,28 +13,47 @@ html, body {
     width: 100%;
     min-height: 50px;
     display: flex;
+    justify-content: space-between;
+    background: red;
+}
+.navigation_buttons {
+    display: flex;
     justify-content: center;
+    min-width: 80%;
+    background: green;
 }
 .nav_btn {
-    margin: 0 50px;
+    margin: auto;
     min-width: 100px;
+}
+.user_profile_btn {
+    display: flex;
+    background: yellow;
+    min-width: 20%;
+}
+.profile_btn {
+    margin: auto;
 }
 .title_container {
     background: var(--background_color);
+    display: flex;
     height: 100vh;
 }
 
 .welcome {
+    margin: auto;
+    min-width: 80%;
+    min-height: 80%;
+    background: red;
     display: flex;
     flex-direction: column;
 }
-.title {
-    margin: auto;
-}
+
 .user_log_buttons {
     margin: auto;
 }
 .form {
+    position: absolute;
     visibility: hidden;
 }
 .form.visible {
@@ -55,5 +74,9 @@ html, body {
 
 .our_mission_container {
     background: var(--background_color);
+    height: 100vh;
+}
+
+.marketing_container {
     height: 100vh;
 }
