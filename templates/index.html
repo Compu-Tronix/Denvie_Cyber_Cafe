@@ -36,6 +36,7 @@
 
         
         <div class="welcome">
+            
             <div class="logo">
                 <h1>
                     DENVIE CYBER CAFE
@@ -59,11 +60,15 @@
                 </button>
             </div>
             <div class="form">
-                <form action="/register" method="POST" >
-                    <input type="text" placeholder="name" name="username" required>
-                    <input type="email" placeholder="email" name="email" required>
-                    <input type="password" placeholder="password" name="password" required>
-                    <input type="password" placeholder="confirm password" name="confirm_password">
+                
+                <form action="/register" method="POST" class="popup-form">
+                    <button id="close_form">
+                        X
+                    </button>
+                    <input type="text" placeholder="name" name="username" required class="input">
+                    <input type="email" placeholder="email" name="email" required class="input">
+                    <input type="password" placeholder="password" name="password" required class="input">
+                    <input type="password" placeholder="confirm password" name="confirm_password" class="input">
                     <input type="submit" value="login">
                     <button>
                         <a href="/registration/">
