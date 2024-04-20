@@ -14,7 +14,7 @@ $(document).ready(function($) {
 
   // close popup
   $('.form').on('click', function(event) {
-    if ($(event.target).is('.form') || $(event.target).is('#close_login_popup')) {
+    if ($(event.target).is('.form') || $(event.target).is('#close_form')) {
       event.preventDefault();
       $(this).removeClass('visible');
     }

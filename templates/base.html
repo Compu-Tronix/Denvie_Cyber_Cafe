@@ -3,13 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='background.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css')}}">
         <script src="{{url_for('static', filename='jquery.js')}}"></script>
         <script src="{{url_for('static', filename='script.js')}}"></script>
         {% block head %}{% endblock %}
     </head>
     <body>
-        
+
+         <!-- document header -->
+        <nav class="navigation_bar">
+            <div class="navigation_buttons">
+                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_vision_container'))">
+                    vision
+                </button>
+                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_mission_container'))">
+                    mission
+                </button>
+                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('services'))">
+                    services
+                </button>
+            </div>    
+            <div class="user_profile_btn">
+                <div class="profile_btn">
+                    <a href="">
+                        {% for username in username %}
+
+                        {{ username }}
+
+                        {% endfor %}
+                    </a>
+                </div>
+            </div>
+        </nav>
+
         {% block body %}{% endblock %}
+
     </body>
 </html>

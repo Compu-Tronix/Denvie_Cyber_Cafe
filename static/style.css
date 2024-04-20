@@ -82,6 +82,16 @@ form ul li {
     padding: 5px;
     border-radius: 20px;
 }
+.form_buttons_container {
+    display: flex;
+    justify-content: space-around;
+}
+.form_btn {
+    border: none;
+    border-radius: 20px;
+    width: 25%;
+}
+
 .our_vision_container {
     background: var(--background_color);
     height: 100vh;

@@ -6,31 +6,7 @@
 {% block body %}
 
 <body>
-    <!-- document header -->
-    <nav class="navigation_bar">
-        <div class="navigation_buttons">
-            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_vision_container'))">
-                vision
-            </button>
-            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_mission_container'))">
-                mission
-            </button>
-            <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('services'))">
-                services
-            </button>
-        </div>    
-        <div class="user_profile_btn">
-            <div class="profile_btn">
-                <a href="">
-                    {% for username in username %}
-
-                    {{ username }}
-
-                    {% endfor %}
-                </a>
-            </div>
-        </div>
-    </nav>
+   
     <!-- document title -->
     <div class="title_container">
 
@@ -62,19 +38,27 @@
             <div class="form">
                 
                 <form action="/register" method="POST" class="popup-form">
-                    <button id="close_form">
-                        X
-                    </button>
+                    
                     <input type="text" placeholder="name" name="username" required class="input">
                     <input type="email" placeholder="email" name="email" required class="input">
                     <input type="password" placeholder="password" name="password" required class="input">
                     <input type="password" placeholder="confirm password" name="confirm_password" class="input">
-                    <input type="submit" value="login">
-                    <button>
-                        <a href="/registration/">
-                            register
-                        </a>
-                    </button>
+                    <div class="form_buttons_container">
+        
+                        <button class="form_btn">
+                            <a href="/registration/">
+                                register
+                            </a>
+                        </button>
+
+                        <input type="submit" value="login" class="form_btn">
+                        
+                        <button id="close_form" class="form_btn">
+                            cancle
+                        </button>
+
+                    </div>
+                    
                 </form>
             </div>
 
