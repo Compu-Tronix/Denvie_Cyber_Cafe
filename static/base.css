@@ -1,5 +1,36 @@
 
 html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: rgb(12, 93, 150);
+    text-align: center;
+}
+
+body {
+    margin: auto;
+}
+
+.navigation_bar{
+    
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation_buttons {
+    display: flex;
+    justify-content: center;
+    min-width: 80%;
+}
+.nav_btn {
+    margin: auto;
+    min-width: 100px;
+}
+.user_profile_btn {
+    display: flex;
+    min-width: 20%;
+}
+.profile_btn {
+    margin: auto;
 }

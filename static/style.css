@@ -1,47 +1,22 @@
 :root {
-    --background_color: transparent
+    --background_color: transparent;
+    --theme-color-light: rgb(101, 191, 255);
+    --theme-color-dark: rgb(12, 93, 150);
 }
 
-html, body {
-    margin: auto
-}
 
-.navigation_bar{
-    
-    position: fixed;
-    margin: 0 auto;
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    justify-content: space-between;
-}
-.navigation_buttons {
-    display: flex;
-    justify-content: center;
-    min-width: 80%;
-}
-.nav_btn {
-    margin: auto;
-    min-width: 100px;
-}
-.user_profile_btn {
-    display: flex;
-    min-width: 20%;
-}
-.profile_btn {
-    margin: auto;
-}
 .title_container {
-    background: var(--background_color);
+    background: var(--theme-color-light);
     display: flex;
     height: 100vh;
 }
 
 .welcome {
+    height: 100vh;
     margin: auto;
     min-width: 80%;
-    min-height: 80%;
-    background: red;
+    max-height: 80%;
+    background: var(--theme-color-light);
     display: flex;
     flex-direction: column;
 }
@@ -84,24 +59,47 @@ form ul li {
 }
 .form_buttons_container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 .form_btn {
+    margin: 10px auto;
     border: none;
     border-radius: 20px;
     width: 25%;
 }
 
-.our_vision_container {
-    background: var(--background_color);
-    height: 100vh;
+.about_us_container {
+    display: flex;
+    
 }
 
-.our_mission_container {
-    background: var(--background_color);
+.vision_mission_container {
     height: 100vh;
+    margin: auto;
+    min-width: 80%;
+    max-height: 80%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 100px;
+}
+.about-us-information_container {
+    margin: 5%;
+    width: 50%;
+    display: flex;
+    background: var(--theme-color-light);
+    border-radius: 100px;
 }
 
+.about_us_cards {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border: 10px solid rgb(12, 93, 150);
+    border-radius: 75px;
+}
 .marketing_container {
     height: 100vh;
+}
+.servce_reviews {
+    background: red;
 }
