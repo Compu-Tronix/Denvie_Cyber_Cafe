@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css')}}">
         <script src="{{url_for('static', filename='jquery.js')}}"></script>
         <script src="{{url_for('static', filename='script.js')}}"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         {% block head %}{% endblock %}
     </head>
     <body>
@@ -13,14 +15,14 @@
          <!-- document header -->
         <nav class="navigation_bar">
             <div class="navigation_buttons">
-                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_vision_container'))">
-                    vision
-                </button>
-                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_mission_container'))">
-                    mission
-                </button>
                 <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('services'))">
                     services
+                </button>
+                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('our_mission_container'))">
+                    about us
+                </button>
+                <button class="nav_btn" id="nav_btn" onclick="smoothScroll(document.getElementById('contact'))">
+                    contact
                 </button>
             </div>    
             <div class="user_profile_btn">
@@ -39,4 +41,25 @@
         {% block body %}{% endblock %}
 
     </body>
+    <footer>
+
+        <div class="footer" id="contact">
+            <ul>
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=27813293481&text=Hello%21%20.">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href=""><img src="" alt="icon"></a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
 </html>

@@ -97,9 +97,23 @@ form ul li {
     border: 10px solid rgb(12, 93, 150);
     border-radius: 75px;
 }
+.our_services_container {
+    border: 2px solid red;
+    display: flex;
+    min-height: 100vh
+}
+.cafe_services {
+    background: var(--theme-color-light);
+    border-radius: 30px
+}
+.service_reviews {
+    background: white
+}
+
 .marketing_container {
     height: 100vh;
 }
+
 .servce_reviews {
     background: red;
 }
