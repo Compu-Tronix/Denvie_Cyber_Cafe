@@ -104,7 +104,12 @@ form ul li {
 }
 .cafe_services {
     background: var(--theme-color-light);
-    border-radius: 30px
+    border-radius: 30px;
+    display:flex
+}
+.cafe_services ul {
+    margin: auto;
+    list-style: none;
 }
 .service_reviews {
     background: white
