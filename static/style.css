@@ -111,6 +111,52 @@ form ul li {
     margin: auto;
     list-style: none;
 }
+/*
+typing form visibility
+*/
+#typing_form {
+    visibility: hidden;
+}
+#typing_form.visible {
+    visibility: visible;
+}
+/*
+it support form visibility
+*/
+#support_form {
+    visibility: hidden;
+}
+#support_form.visible {
+    visibility: visible;
+}
+/*
+online applications form visibility
+*/
+#connectivity_form {
+    visibility: hidden;
+}
+#connectivity_form.visible {
+    visibility: visible;
+}
+/*
+computer bookings form visibility
+*/
+#computer_form {
+    visibility: hidden;
+}
+#computer_form.visible {
+    visibility: visible;
+}
+/*
+printing form visibility 
+*/
+#print_form {
+    visibility: hidden;
+}
+#print_form.visible {
+    visibility: visible;
+}
+
 .service_reviews {
     background: white
 }
