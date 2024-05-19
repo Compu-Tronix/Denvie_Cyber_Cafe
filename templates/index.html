@@ -112,19 +112,17 @@
                         </div>
 
                         <div class="service_text" id="typing_form">
-                            <form action="/submit_typing_service/" method="POST" class="service_form">
+                            <div class="service_form">
                                 <button id="close_typing_form">
                                     x
                                 </button>
-                                <select type="text">
-                                    <option value="nort"></option>
-                                    <option value="assignment">assignment</option>
-                                    <option value="constitution">constitution</option>
-                                    <option value="resume">resume</option>
-                                    <option value="quotation/invoice">quotation/invoice</option>
-                                </select>
-                                <input type="submit">
-                            </form>
+                                <div class="btns">
+                                    <button onclick="assignment_form(document.getElementById('more_info_container'))">assignment</button>
+                                    <button onclick="constitution_form(document.getElementById('more_info_container'))">constitution</button>
+                                    <button onclick="resume_form(document.getElementById('more_info_container'))">resume</button>
+                                    <button onclick="QuotationInvoice_form(document.getElementById('more_info_container'))">Quotation/Invoice</button>
+                                </div>
+                            </div>
                         </div>
                     </li>
 
@@ -227,7 +225,7 @@
                 
             </div>
             
-            <div class="more_infomation_container">
+            <div class="more_infomation_container" id="more_info_container">
                 <div class="service_reviews">
                     <p>service reviews</p>
                 </div>

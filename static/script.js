@@ -153,7 +153,7 @@ $(document).ready(function($) {
 
 });
 
-
+//scroll onclick function
 window.smoothScroll = function(target) {
   var scrollContainer = target;
   do {
