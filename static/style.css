@@ -105,7 +105,8 @@ form ul li {
 .cafe_services {
     background: var(--theme-color-light);
     border-radius: 30px;
-    display:flex
+    display:flex;
+    width:35%;
 }
 .cafe_services ul {
     margin: auto;
@@ -156,7 +157,10 @@ printing form visibility
 #print_form.visible {
     visibility: visible;
 }
-
+.more_information_container {
+    border: 2px solid orange;
+    width: 75%
+}
 .service_reviews {
     background: white
 }
