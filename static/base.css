@@ -24,8 +24,16 @@ body {
     min-width: 80%;
 }
 .nav_btn {
+    background: var(--background_color);
+    box-shadow: 0 0 10px var(--theme-color-light);
+    border-radius: 30px;
+    padding: 10px;
     margin: auto;
     min-width: 100px;
+}
+.nav_btn:hover {
+    background: var(--theme-color-light);
+    box-shadow: 0 0px 20px var(--theme-color-light)
 }
 .user_profile_btn {
     display: flex;
@@ -34,3 +42,5 @@ body {
 .profile_btn {
     margin: auto;
 }
+
+
