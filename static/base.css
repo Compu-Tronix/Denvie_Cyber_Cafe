@@ -1,14 +1,39 @@
 
+:root {
+    --background_color: transparent;
+    --theme-color-light: rgb(101, 191, 255);
+    --theme-color-dark: rgb(12, 93, 150);
+    --border-color: rgb(255, 255, 255);
+}
+
 html {
     height: 100%;
-    background: rgb(12, 93, 150);
     text-align: center;
 }
 
+
+
 body {
-    margin: auto;
+	background: linear-gradient(-45deg, var(--theme-color-light), var(--theme-color-dark), var(--theme-color-light), var(--theme-color-dark));
+	background-size: 600% 600%;
+	animation: gradient 12.5s ease infinite;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*
+navigation bar
+*/
 .navigation_bar{
     
     position: fixed;
@@ -26,6 +51,7 @@ body {
 .nav_btn {
     background: var(--background_color);
     box-shadow: 0 0 10px var(--theme-color-light);
+    border: none;
     border-radius: 30px;
     padding: 10px;
     margin: auto;
@@ -42,5 +68,3 @@ body {
 .profile_btn {
     margin: auto;
 }
-
-

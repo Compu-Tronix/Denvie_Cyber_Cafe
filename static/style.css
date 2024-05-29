@@ -1,17 +1,7 @@
-:root {
-    --background_color: transparent;
-    --theme-color-light: rgb(101, 191, 255);
-    --theme-color-dark: rgb(12, 93, 150);
-}
-
-body {
-    
-}
-
+/*
+root variables are on base.css
+*/
 .title_container {
-    background-image: url('../static/assets/img/background.jpg');
-    background-size: cover;
-    background-position: center;
     display: flex;
     height: 100vh;
     
@@ -57,16 +47,15 @@ body {
     width: 80%;
     height: 80%;
     margin: auto;
-    border: 10px solid rgb(12, 93, 150);
+    box-shadow: 0 0 10px var(--theme-color-light);
     border-radius: 75px;
 }
 .our_services_container {
-    border: 2px solid red;
     display: flex;
     min-height: 100vh
 }
 .cafe_services {
-    background: var(--theme-color-light);
+    box-shadow: 0 0 10px var(--theme-color-light);
     border-radius: 30px;
     display:flex;
     width:35%;
@@ -77,11 +66,24 @@ body {
 }
 
 .more_information_container {
-    border: 2px solid orange;
-    width: 75%
+    box-shadow: 0 0 10px var(--theme-color-light);
+    border-radius: 30px;
+    width: 75%;
+    display: flex;
 }
+.scrollable{
+    margin: auto;
+    background: green;
+    height: 80%;
+    width: 80%;
+    overflow: hidden
+}
+.scrollable:hover {
+    overflow: auto
+}
+
+
 .service_reviews {
-    background: white
 }
 
 .marketing_container {
