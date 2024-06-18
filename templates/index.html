@@ -35,30 +35,19 @@
                     
                 </a>
             </div>
-            <div class="form">
-                
-                <form action="/register" method="POST" class="popup-form">
-                    
-                    <input type="text" placeholder="name" name="username" required class="input">
-                    <input type="email" placeholder="email" name="email" required class="input">
-                    <input type="password" placeholder="password" name="password" required class="input">
-                    <input type="password" placeholder="confirm password" name="confirm_password" class="input">
-                    <div class="form_buttons_container">
-    
-                        <input type="submit" value="login" class="form_btn">
+            <div class="form" id="user_log_form">
+                <form class="popup-form">
+                    <button id="close_form" class="close_form_btn">
+                        X
+                    </button>
 
-                        <button class="form_btn">
-                            <a href="/registration/">
-                                register
-                            </a>
-                        </button>
+                    <button class="form_btn" onclick="login(document.getElementById('user_log_form'))">
+                        login
+                    </button>
 
-                        <button id="close_form" class="form_btn">
-                            cancle
-                        </button>
-
-                    </div>
-                    
+                    <button class="form_btn">
+                        register
+                    </button>
                 </form>
             </div>
 

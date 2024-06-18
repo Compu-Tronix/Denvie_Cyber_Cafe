@@ -17,12 +17,13 @@ register/login forms
     right: 0;
 }
 .popup-form {
+    box-shadow: 0 0 10px var(--theme-color-light);
+    border-radius: 30px;
     margin: auto;
     display: flex;
     flex-direction: column;
     min-width: 50%;
     max-width: 50%;
-    background: red;
 }
 form ul li {
     list-style-type: none;
