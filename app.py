@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, session
 import mysql.connector
 
 HOST = 'localhost'
-DATABASE = 'letting_app'
-USER = 'letting.app'
-PASSWORD = 'letting@database'
+DATABASE = 'denvie_application'
+USER = 'denvieapp'
+PASSWORD = 'denviedb'
 
 app = Flask(__name__)
 sessionId = []
@@ -78,7 +78,6 @@ def set_session():
       session['id'] = data
       print('session initiated')
 
-
 # USER AUTHENTICATOR FUNCTION
 def user_authentication():
     username = request.form['username']
@@ -105,6 +104,9 @@ def user_authentication():
     else:
          print('user_authentication function error')
 
+def create_acc():
+
+def check_email():
 
 # USER LOGIN FUNCTION
 @app.route('/login',methods=['POST','GET'])
@@ -123,6 +125,17 @@ def login():
               print('login function error')
               return main()
 
+# USER REGISTRATION
+@app.route('/register', methods=['POST'])
+def register():
+    
+    if check_email() == True:
+        print('email address already exists')
+        return main()
+    
+    elif check_email() == False:
+        creat_acc()
+        return main()
 
 @app.route('/')
 def main():
