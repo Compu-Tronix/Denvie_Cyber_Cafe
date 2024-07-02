@@ -38,11 +38,13 @@ const registration_form = `
                     
                     <button id="close_form" class="close_form_btn">
                       X
-                    </button>   
-                    <input type="text" placeholder="name" name="username" required class="input">
+                    </button>
+                    <input type="text" placeholder="surname" name="surname" required class="input">   
+                    <input type="text" placeholder="name" name="name" required class="input">
+                    <input type="text" placeholder="username(optional)" name="username" class="input"> 
                     <input type="email" placeholder="email" name="email" required class="input">
                     <input type="password" placeholder="password" name="password" required class="input">
-                    <input type="password" placeholder="confirm password" name="confirm_password" class="input">
+                    <input type="password" placeholder="confirm password" name="confirmPWD" class="input">
                     <div class="form_buttons_container">
     
                         <input type="submit" value="register" class="form_btn">

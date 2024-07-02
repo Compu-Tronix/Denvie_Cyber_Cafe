@@ -24,8 +24,8 @@ def clear_int(value):
 
             return int(data)
 
-# FECTH DATA FROM DATABASE FUNCTION
-def fetch_data(sql_statement, data_source):
+# CONNECT TO DATABASE & EXECUTE GIVEN SQL STATEMENT
+def dbFunction(sql_statement, data_source):
 
     db_connection = mysql.connector.connect(host = HOST, database = DATABASE, user = USER, password = PASSWORD, auth_plugin='caching_sha2_password')
     cursor = db_connection.cursor()
@@ -33,11 +33,7 @@ def fetch_data(sql_statement, data_source):
     sql_statement = sql_statement
     data_source = data_source
     cursor.execute(sql_statement, data_source)
-    db_data = cursor.fetchall()
     cursor.close()
-
-    print(db_data)
-    return db_data
 
 # SESSION AUTHENTICATOR FUNCTION
 def session_authenticator():
@@ -53,7 +49,7 @@ def session_authenticator():
     else:
         sql_statement = "select exists (select id from user where id=%s);"
         data_source = sessionId
-        db_data = fetch_data(sql_statement, data_source)
+        db_data = dbFunction(sql_statement, data_source)
         data = clear_int(db_data)
 
         if data == 1:
@@ -71,7 +67,7 @@ def set_session():
 
       sql_statement = "select id from user where username=%s and password=%s;"
       data_source = inputData
-      db_data = fetch_data(sql_statement, data_source)
+      db_data = dbFunction(sql_statement, data_source)
       
       data = clear_int(db_data)
 
@@ -87,7 +83,7 @@ def user_authentication():
     
     sql_statement = "select exists (select * from user where username=%s and password=%s);"
     data_source = inputData
-    db_data = fetch_data(sql_statement, data_source)
+    db_data = dbFunction(sql_statement, data_source)
     data = clear_int(db_data)
     
     if data == 1:
@@ -105,8 +101,59 @@ def user_authentication():
          print('user_authentication function error')
 
 def create_acc():
+    username = request.form['username']
+    email = request.form['email']
+    password = request.form['password']
+    confirmPWD = request.form['confirmPWD']
+    name = request.form['name']
+    surname = request.form['surname']
+
+    if password == confirmPWD:
+        inputData.append(surname)
+        inputData.append(name)
+        inputData.append(username)
+        inputData.append(email)
+        inputData.append(password)
+
+        sql_statement = 'insert into users (surname, name, username, email, password) values (%s, %s, %s, %s, %s);'
+        data_source = inputData
+        
+        dbFunction(sql_statement, data_source)
+        
+        inputData.clear()
+        print('new user account created')
+
+        return main()
+    
+    else:
+        print('create acc failed')
+        return main()
+
+
 
 def check_email():
+    email = request.form['email']
+    inputData.append(email)
+
+    sql_statement = "select exists (select email from users where email=%s);"
+    data_source = inputData
+    #db_data = dbFunction(sql_statement, data_source)
+
+    data = clear_int(db_data)
+
+    if data == 1:
+        inputData.clear()
+
+        print('email already exists')
+        return True
+    
+    elif data == 0:
+        inputData.clear()
+
+        return False
+    
+    else:
+        print('check email function error')
 
 # USER LOGIN FUNCTION
 @app.route('/login',methods=['POST','GET'])
@@ -130,11 +177,14 @@ def login():
 def register():
     
     if check_email() == True:
-        print('email address already exists')
+    
         return main()
     
     elif check_email() == False:
-        creat_acc()
+        create_acc()
+        return main()
+    
+    else:
         return main()
 
 @app.route('/')
