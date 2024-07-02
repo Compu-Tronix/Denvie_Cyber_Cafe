@@ -33,7 +33,7 @@ def insertDBdata(sql_statement, data_source):
 
     sql_statement = sql_statement
     data_source = data_source
-    
+
     cursor.execute(sql_statement, data_source)
     db_data = cursor.fetchall()
     db_connection.commit()
@@ -44,7 +44,7 @@ def insertDBdata(sql_statement, data_source):
 # CONNECT TO DATABASE & FETCH DATA
 def fetchDBdata(sql_statement, data_source):
 
-    db_connection = mysql.connector.connect(host = HOST, database = DATABASE, user = USER, password = PASSWORD, auth_pligin='caching_sha2_password')
+    db_connection = mysql.connector.connect(host = HOST, database = DATABASE, user = USER, password = PASSWORD, auth_plugin='caching_sha2_password')
     cursor = db_connection.cursor()
 
     sql_statement = sql_statement
@@ -54,7 +54,7 @@ def fetchDBdata(sql_statement, data_source):
     dbData = cursor.fetchall()
     cursor.close()
 
-    return db_data
+    return dbData
 
 
 # SESSION AUTHENTICATOR FUNCTION
@@ -156,7 +156,29 @@ def create_acc():
 
 
 def check_email():
-    return False
+
+    email = request.form['email']
+    inputData.append(email)
+
+    sql_statement = "select exists (select email from users where email=%s);"
+    data_source = inputData
+    db_data = fetchDBdata(sql_statement, data_source)
+
+    data = clear_int(db_data)
+
+    if data == 1:
+        inputData.clear()
+
+        print('email already exists')
+        return True
+    
+    elif data == 0:
+        inputData.clear()
+
+        return False
+    
+    else:
+        print('check email function error')
 
 
 # USER LOGIN FUNCTION
