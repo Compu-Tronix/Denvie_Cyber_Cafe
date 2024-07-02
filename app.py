@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session
 import mysql.connector
+from tabulate import tabulate
 
 HOST = 'localhost'
 DATABASE = 'denvie_application'
@@ -24,18 +25,41 @@ def clear_int(value):
 
             return int(data)
 
-# CONNECT TO DATABASE & EXECUTE GIVEN SQL STATEMENT
-def dbFunction(sql_statement, data_source):
+# CONNECT TO DATABASE & INSERT DATA
+def insertDBdata(sql_statement, data_source):
 
     db_connection = mysql.connector.connect(host = HOST, database = DATABASE, user = USER, password = PASSWORD, auth_plugin='caching_sha2_password')
     cursor = db_connection.cursor()
 
     sql_statement = sql_statement
     data_source = data_source
+    
     cursor.execute(sql_statement, data_source)
+    db_data = cursor.fetchall()
+    db_connection.commit()
     cursor.close()
 
+    return db_data
+
+# CONNECT TO DATABASE & FETCH DATA
+def fetchDBdata(sql_statement, data_source):
+
+    db_connection = mysql.connector.connect(host = HOST, database = DATABASE, user = USER, password = PASSWORD, auth_pligin='caching_sha2_password')
+    cursor = db_connection.cursor()
+
+    sql_statement = sql_statement
+    data_source = data_source
+
+    cursor.execute(sql_statement, data_source)
+    dbData = cursor.fetchall()
+    cursor.close()
+
+    return db_data
+
+
 # SESSION AUTHENTICATOR FUNCTION
+
+
 def session_authenticator():
 
     session_id = session.get('id')
@@ -118,7 +142,7 @@ def create_acc():
         sql_statement = 'insert into users (surname, name, username, email, password) values (%s, %s, %s, %s, %s);'
         data_source = inputData
         
-        dbFunction(sql_statement, data_source)
+        insertDBdata(sql_statement, data_source)
         
         inputData.clear()
         print('new user account created')
@@ -132,28 +156,8 @@ def create_acc():
 
 
 def check_email():
-    email = request.form['email']
-    inputData.append(email)
+    return False
 
-    sql_statement = "select exists (select email from users where email=%s);"
-    data_source = inputData
-    #db_data = dbFunction(sql_statement, data_source)
-
-    data = clear_int(db_data)
-
-    if data == 1:
-        inputData.clear()
-
-        print('email already exists')
-        return True
-    
-    elif data == 0:
-        inputData.clear()
-
-        return False
-    
-    else:
-        print('check email function error')
 
 # USER LOGIN FUNCTION
 @app.route('/login',methods=['POST','GET'])
